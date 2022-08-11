@@ -1,4 +1,4 @@
-from SurferHelpers.Drivers import Driver_setup
+from Instabot.Utils.Drivers import Driver_setup
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
