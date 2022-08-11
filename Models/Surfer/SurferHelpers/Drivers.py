@@ -2,6 +2,7 @@ from selenium import webdriver
 from selenium_stealth import stealth
 from decouple import config
 
+
 class Driver_setup:
     def __init__(self, path, headless):
         self.path = path
@@ -35,12 +36,11 @@ class Driver_setup:
             self.driver = driver
             return driver
         except Exception as e:
-            print(e)
             return 'error' + str(e)
 
     @staticmethod
-    def configure_driver(platform,username):
-        appdata = config('USERDATA')+f'{platform}\\{username}'
+    def configure_driver(**args):
+        appdata = config('USERDATA')+f'{args["platform"]}\\{args["userdata"]}'
         print(config('CHROMEDRIVER'))
         create_driver = Driver_setup(config('CHROMEDRIVER'), False)
         driver = create_driver.create_driver(appdata)
